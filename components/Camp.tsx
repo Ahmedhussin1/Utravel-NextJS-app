@@ -1,6 +1,7 @@
 import Image from "next/image";
 import mapIcon from '@/public/folded-map.svg'
 import { PEOPLE_URL } from "@/constant";
+import quote from '@/public/quote.svg'
 
 interface CampProps {
   backgroundImage: string;
@@ -10,7 +11,7 @@ interface CampProps {
 }
 const CampSite =({backgroundImage,title,subtitle,peopleJoined}:CampProps)=>{
   return(
-    <div className={`h-full w-full min-w-[1100px] ${backgroundImage} bg-cover bg-no-repeat lg:rounded-r-5xl`}>
+    <div className={`h-full w-full min-w-[1100px] ${backgroundImage} bg-cover bg-no-repeat lg:rounded-5xl`}>
       <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
         <div className="flexCenter gap-4">
           <div className="rounded-full bg-green-50 p-4">
@@ -55,7 +56,31 @@ function Camp() {
           subtitle="Prigen, Pasuruan"
           peopleJoined="50+ joined"
         />
-        <CampSite/>
+        <CampSite 
+          backgroundImage="bg-bg-img-2"
+          title="Mountain View"
+          subtitle="Somewhere in the wild"
+          peopleJoined="50+ joined"
+        />
+      </div>
+      <div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6">
+        <div className="bg-green-50 p-8 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:px-16 xl:py-20 relative w-full overflow-hidden rounded-3xl">
+          <h2 className="regular-24 md:regular-32 2xl:regular-64 capitalize text-white">
+            <strong>Feeling Lost</strong> And Not Knowing The Way ?
+          </h2>
+          <p className="regular-14 xl:regular-16 mt-5 text-white">
+            Starting from the anxiety of the climbers when visiting a new climbing location, 
+            the possibility of getting lost is very large. 
+            That's why we are here for those of you who want to start an adventure
+          </p>
+          <Image
+            src={quote}
+            alt="camp-2"
+            width={186}
+            height={219}
+            className="camp-quote"
+          />
+        </div>
       </div>
     </section>
   )
